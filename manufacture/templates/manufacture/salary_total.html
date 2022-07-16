@@ -1,0 +1,88 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>Отчет о зарплате</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">ОТЧЕТ О ЗАРПЛАТЕ</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th>ФИО</th>
+						      <th>ДОЛЖНОСТЬ</th>
+						      <th>РАБ ДНЕЙ</th>
+						      <th>ФАКТ ДНИ</th>
+						      <th>ОКЛАД_СФ</th>
+								<th>ФАКТ_ОКЛАД</th>
+						      <th>Работодатель (соцфонд)</th>
+								<th>ОКЛАД(начис)</th>
+						      <th>ПУ</th>
+								<th>ЭВА</th>
+								<th>Начислено</th>
+								<th>Премия</th>
+								<th>Аванс</th>
+								<th>Продажа тов</th>
+								<th>Выплата</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for i in employers %}
+
+						    <tr>
+
+						      <th scope="row">{{ i.fio }}</th>
+						      <td>{{ i.occupation }}</td>
+						      <td>{{ i.working_days }}</td>
+						      <td>{{ i.fact_work_days }}</td>
+						      <td>{{ i.oklad_social_fund }}</td>
+								<td>{{ i.oklad_fact }}</td>
+						      <td>{{ i.firm_social_fund }}</td>
+						      <td>{{ i.oklad_nachislen }}</td>
+								<td>{{ i.calc_pu }}</td>
+						      <td>{{ i.calc_eva }}</td>
+								<td>{{ i.accrued_salary }}</td>
+								<td>{{ i.eva }}</td>
+								<td>{{ i.eva }}</td>
+								<td>{{ i.eva }}</td>
+								<td>{{ i.eva }}</td>
+								<td>{{ i.eva }}</td>
+						    </tr>
+						  {% endfor %}
+
+						  </tbody>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
+
